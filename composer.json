@@ -1,0 +1,47 @@
+{
+	"name": "kdabrow/time-machine-mysql",
+	"description": "Mysql driver for time machine",
+	"type": "package",
+	"keywords": [
+		"php",
+		"laravel",
+		"lumen",
+		"database",
+		"dates",
+		"testing",
+		"integration"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Karol Dąbrowski",
+			"email": "20278897+karoldabro@users.noreply.github.com",
+			"homepage": "https://kdabrow.com"
+		}
+	],
+	"require": {
+		"php": "^7.2|^8.0",
+		"kdabrow/time-machine": "dev-development",
+		"illuminate/database": "^6.0|^7.0|^8.0|^9.0"
+	},
+	"require-dev": {
+		"orchestra/testbench": "^4.0|^5.0|^6.0|^7.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Kdabrow\\TimeMachineMysql\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Kdabrow\\TimeMachineMysql\\Tests\\": "tests"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Kdabrow\\TimeMachineMysql\\Providers\\TimeMachineMysqlProvider"
+			]
+		}
+	}
+}
