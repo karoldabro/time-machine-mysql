@@ -3,6 +3,7 @@
 namespace Kdabrow\TimeMachineMysql\Tests\Database;
 
 use Kdabrow\TimeMachine\Database\Column;
+use Kdabrow\TimeMachine\TimeTraveller;
 use Kdabrow\TimeMachineMysql\Database\MysqlTable;
 use Kdabrow\TimeMachineMysql\Tests\Mocks\ClassThatExtendsModel;
 use Kdabrow\TimeMachineMysql\Tests\TestCase;
@@ -14,7 +15,7 @@ class MysqlTableTest extends TestCase
     {
         $table = new MysqlTable();
 
-        $result = $table->selectUpdatableFields(new ClassThatExtendsModel());
+        $result = $table->selectUpdatableFields(new TimeTraveller(new ClassThatExtendsModel()));
 
         $this->assertCount(4, $result);
         $this->assertInstanceOf(Column::class, $result['column_1']);
